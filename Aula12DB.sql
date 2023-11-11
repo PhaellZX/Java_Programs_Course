@@ -7,7 +7,7 @@ CREATE TABLE authors(
 );
 
 CREATE TABLE titles(
-    ISBN INTEGER PRIMARY KEY auto_increment,
+    ISBN INTEGER PRIMARY KEY,
     title VARCHAR(255),
     editionNum VARCHAR(255),
     copyright VARCHAR(255)
