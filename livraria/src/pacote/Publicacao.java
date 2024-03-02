@@ -29,5 +29,6 @@ public abstract class Publicacao {
 
 	protected abstract String getEditora();
 	protected abstract int getEdicao();
-		
+	protected abstract String getCod();
+	
 }

@@ -27,16 +27,31 @@ public class Livraria {
 	}
 	
 	public int getExemplares(Publicacao pub) {
-		return 0;
+		 int totalExemplares = 0;
+	        for (Impressao impressao : estoque) {
+	            if (impressao.getPublicacao().equals(pub)) {
+	                totalExemplares++;
+	            }
+	        }
+	        return totalExemplares;
 	}
-	public Impressao vende(Publicacao pub) { // PAREI AQUI
-		Impressao i = new Impressao(i.getCod(), i.getData());
-		return i;
+	public Impressao vende(Publicacao pub) { 
+		  for (Impressao impressao : estoque) {
+	            if (impressao.getPublicacao().equals(pub)) {
+	                estoque.remove(impressao);
+	                return impressao;
+	            }
+	        }
+	        return null;
 	}
-	public ArrayList<Impressao> addEstoque(Publicacao pub){
-		return null;
+	public void addEstoque(Publicacao pub){
+		 Impressao impressao = new Impressao(pub.getCod(), pub.getData());
+		 estoque.add(impressao);
 	}
-	public ArrayList<Impressao> addEstoque(Publicacao pub, int qtde){
-		return null;
+	public void addEstoque(Publicacao pub, int qtde){
+		for (int i = 0; i < qtde; i++) {
+            Impressao impressao = new Impressao(pub.getCod(), pub.getData());
+            estoque.add(impressao);
+        }
 	}
 }

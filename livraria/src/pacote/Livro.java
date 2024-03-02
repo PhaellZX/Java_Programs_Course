@@ -57,4 +57,10 @@ public class Livro extends Publicacao {
 		return 0;
 	}
 	
+	@Override
+	protected String getCod() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }	

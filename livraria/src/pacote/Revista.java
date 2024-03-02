@@ -45,4 +45,10 @@ public class Revista extends Publicacao {
 	public String toString() {
 		return "Revista: " + getTitulo() + "(" + getData() + ") - Editora "+ getEditora() + " - Edição n:" + getEdicao() + "";
 	}
+
+	@Override
+	protected String getCod() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
