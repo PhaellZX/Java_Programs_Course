@@ -1,19 +1,45 @@
 package pacote;
 
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
 public class Main {
 
-	public static void main(String[] args) {
-		Moto moto1 = new Moto("Biz");
-		Moto moto2 = new Moto("Suzuki");
-		Moto moto3 = new Moto("Honda");
-	
-		moto1.acelera(40);
-		moto1.acelera(40);
-		moto1.acelera(40);
-		moto1.acelera(40);
-		
-		moto1.abastecer(50);
-		System.out.println(moto1.toString());
-		
-	}
+    @Test
+    public void testMotoAcelera() {
+        // Criando uma instância de Moto
+        Moto moto = new Moto("Modelo Teste");
+        
+        // Acelerando a moto
+        moto.acelera(50);
+        
+        // Verificando se a velocidade foi atualizada corretamente
+        assertEquals(50, moto.getVelocidade(), 0.01); // Espera-se que a velocidade seja 50
+    }
+
+    @Test
+    public void testMotoFreia() {
+        // Criando uma instância de Moto
+        Moto moto = new Moto("Modelo Teste");
+        
+        // Acelerando a moto
+        moto.acelera(100);
+        
+        // Freando a moto
+        moto.freia(50);
+        
+        // Verificando se a velocidade foi atualizada corretamente
+        assertEquals(50, moto.getVelocidade(), 0.01); // Espera-se que a velocidade seja 50
+    }
+
+    @Test
+    public void testMotoAbastecer() {
+        // Criando uma instância de Moto
+        Moto moto = new Moto("Modelo Teste");
+        
+        // Abastecendo a moto
+        moto.abastecer(10);
+        
+    }
 }
